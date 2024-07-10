@@ -3,7 +3,7 @@ using LeaveManagementSystem.Web.Data;
 using LeaveManagementSystem.Web.Models.LeaveTypes;
 using Microsoft.EntityFrameworkCore;
 
-namespace LeaveManagementSystem.Web.Services;
+namespace LeaveManagementSystem.Web.Services.LeaveType;
 
 public class LeaveTypesService(ApplicationDbContext _context, IMapper _mapper) : ILeaveTypesService
 {
@@ -39,13 +39,13 @@ public class LeaveTypesService(ApplicationDbContext _context, IMapper _mapper) :
     }
     public async Task Edit(LeaveTypeUpdateVM model)
     {
-        var leaveType = _mapper.Map<LeaveType>(model);
+        var leaveType = _mapper.Map<Data.LeaveType>(model);
         _context.Update(leaveType);
         await _context.SaveChangesAsync();
     }
     public async Task Create(LeaveTypeCreateVM model)
     {
-        var leaveType = _mapper.Map<LeaveType>(model);
+        var leaveType = _mapper.Map<Data.LeaveType>(model);
         _context.Add(leaveType);
         await _context.SaveChangesAsync();
     }
