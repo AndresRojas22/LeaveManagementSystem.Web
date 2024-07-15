@@ -7,6 +7,7 @@ namespace LeaveManagementSystem.Web.Services.LeaveType
         Task<bool> CheckIfLeaveTypeExist(string name);
         Task<bool> CheckIfLeaveTypeExistForEdit(LeaveTypeUpdateVM leaveTypeUpdate);
         Task Create(LeaveTypeCreateVM model);
+        Task<bool> DaysExceedMaximum(int leaveTypeId, int days);
         Task Edit(LeaveTypeUpdateVM model);
         Task<T?> Get<T>(int id) where T : class;
         Task<List<LeaveTypeReadOnlyVM>> GetAll();

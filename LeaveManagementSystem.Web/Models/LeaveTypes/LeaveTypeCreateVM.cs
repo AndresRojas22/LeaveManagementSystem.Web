@@ -6,7 +6,7 @@ namespace LeaveManagementSystem.Web.Models.LeaveTypes
     {
         [Required]
         [Length(4, 150, ErrorMessage = "You have violated the length requeriments")]
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; }
 
         [Required]
         [Range(1, 90)]
